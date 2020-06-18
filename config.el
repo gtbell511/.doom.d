@@ -5,7 +5,7 @@
 
 (setq doom-theme 'doom-dark+)
 
-(setq projectile-project-search-path '("~/gtbell/"))
+(setq projectile-project-search-path '("~/Dropbox/gtbell/"))
 
 
 (after! org
@@ -26,7 +26,7 @@
 			("~/Dropbox/gtbell/someday.org" :level . 1)
 	             	("~/Dropbox/gtbell/ticker.org" :maxlevel . 2)))
 
-	(setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+	(setq org-todo-keywords '((sequence "NEW(e)" "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
 	(setq org-todo-keyword-faces '(("TODO" :foreground "#0098dd" :weight normal :underline t)
 			("NEXT" :foreground "#ff6480" :weight normal :underline t)
