@@ -9,32 +9,34 @@
 
 
 (after! org
-	(setq org-directory "~/Dropbox/gtbell/")
+  (global-set-key (kbd "<f8>") 'org-capture)
+  (setq org-directory "~/Dropbox/gtbell/")
 
-	(setq org-agenda-files '("~/Dropbox/gtbell/inbox.org"
-		           "~/Dropbox/gtbell/main.org"
-		           "~/Dropbox/gtbell/ticker.org"))
+  (setq org-agenda-files '("~/Dropbox/gtbell/"))
 
-(setq org-protocol-default-template-key "l")
-(setq org-capture-templates
- '(("l" "Link" entry (file+headline "~/Dropbox/gtbell/inbox.org" "Links")
-        "* %:description\n %:link\n  %:initial")))
+  (setq org-protocol-default-template-key "l")
+  (setq org-capture-templates
+        '(("l" "Link" entry (file+headline "~/Dropbox/gtbell/inbox.org" "Links")
+           "* %:description\n %:link\n  %:initial")
+        ("n" "Notes" entry (file+headline "~/Dropbox/gtbell/inbox.org" "Notes")
+         "* %U\n %?")
+        ("t" "Task" entry (file+headline "~/Dropbox/gtbell/inbox.org" "Tasks")
+         "* NEW %?")
+        ("p" "Project" entry (file+headline "~/Dropbox/gtbell/inbox.org" "Projects")
+         "* NEW %? [/][%]\n + [ ]")
+        ))
 
+  (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
 
+  (setq org-todo-keywords '((sequence "NEW(e)" "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
-	(setq org-refile-targets '(("~/Dropbox/gtbell/main.org" :maxlevel . 3)
-			("~/Dropbox/gtbell/someday.org" :level . 1)
-	             	("~/Dropbox/gtbell/ticker.org" :maxlevel . 2)))
+  (setq org-todo-keyword-faces '(("TODO" :foreground "#0098dd" :weight normal :underline t)
+                                 ("NEXT" :foreground "#ff6480" :weight normal :underline t)
+                                 ("WAITING" :foreground "#9f7efe" :weight normal :underline t)
+                                 ("DONE" :foreground "#50a14f" :weight normal :underline t)
+                                 ("CANCELLED" :foreground "#7c7c75" :weight normal :underline t)))
 
-	(setq org-todo-keywords '((sequence "NEW(e)" "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
-
-	(setq org-todo-keyword-faces '(("TODO" :foreground "#0098dd" :weight normal :underline t)
-			("NEXT" :foreground "#ff6480" :weight normal :underline t)
-			("WAITING" :foreground "#9f7efe" :weight normal :underline t)
-			("DONE" :foreground "#50a14f" :weight normal :underline t)
-			("CANCELLED" :foreground "#7c7c75" :weight normal :underline t)))
-
-	(setq org-tag-alist '(("@computer" . ?c) ("@home" . ?h) ("@phone" . ?p) ("@email" . ?e) ("@errand" . ?r) ("@personal" . ?m))))
+  (setq org-tag-alist '(("@computer" . ?c) ("@home" . ?h) ("@phone" . ?p) ("@email" . ?e) ("@errand" . ?r) ("@personal" . ?m))))
 
 (use-package org-roam
       :ensure t
