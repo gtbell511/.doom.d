@@ -28,7 +28,7 @@
 
   (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
 
-  (setq org-todo-keywords '((sequence "NEW(e)" "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+  (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
   (setq org-todo-keyword-faces '(("TODO" :foreground "#0098dd" :weight normal :underline t)
                                  ("NEXT" :foreground "#ff6480" :weight normal :underline t)
