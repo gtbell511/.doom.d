@@ -21,12 +21,14 @@
         ("n" "Notes" entry (file+headline "~/Dropbox/gtbell/inbox.org" "Notes")
          "* %U\n %?")
         ("t" "Task" entry (file+headline "~/Dropbox/gtbell/inbox.org" "Tasks")
-         "* NEW %?")
+         "* TODO %?")
         ("p" "Project" entry (file+headline "~/Dropbox/gtbell/inbox.org" "Projects")
-         "* NEW %? [/][%]\n + [ ]")
+         "* TODO %? [/][%]\n + [ ]")
         ))
 
   (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
+
+  (setq org-log-done 'time)
 
   (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
@@ -43,7 +45,7 @@
       :hook
       (after-init . org-roam-mode)
       :custom
-      (org-roam-directory "~/Dropbox/gtbell/")
+      (org-roam-directory "~/Dropbox/gtbell/Notes/")
       :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
                ("C-c n f" . org-roam-find-file)
@@ -51,3 +53,5 @@
               :map org-mode-map
               (("C-c n i" . org-roam-insert))
               (("C-c n I" . org-roam-insert-immediate))))
+
+(find-file "~/Dropbox/gtbell/main.org")
