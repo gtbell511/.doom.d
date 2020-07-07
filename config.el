@@ -12,7 +12,8 @@
   (global-set-key (kbd "<f8>") 'org-capture)
   (setq org-directory "~/Dropbox/gtbell/")
 
-  (setq org-agenda-files '("~/Dropbox/gtbell/"))
+  (setq org-agenda-files '("~/Dropbox/gtbell/"
+                           "~/Dropbox/gtbell/Notes/"))
 
   (setq org-protocol-default-template-key "l")
   (setq org-capture-templates
@@ -27,7 +28,6 @@
         ))
 
   (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
-
   (setq org-log-done 'time)
 
   (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
