@@ -1,3 +1,4 @@
+
 (setq user-full-name "Goodwin Bell"
       user-mail-address "gtbell511@gmail.com")
 
@@ -6,7 +7,6 @@
 (setq doom-theme 'doom-dark+)
 
 (setq projectile-project-search-path '("~/Dropbox/gtbell/"))
-
 
 (after! org
   (global-set-key (kbd "<f8>") 'org-capture)
@@ -49,7 +49,7 @@
       :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
                ("C-c n f" . org-roam-find-file)
-               ("C-c n g" . org-roam-graph-show))
+               ("C-c n g" . org-roam-graph))
               :map org-mode-map
               (("C-c n i" . org-roam-insert))
               (("C-c n I" . org-roam-insert-immediate))))
