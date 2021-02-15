@@ -4,7 +4,9 @@
 
 (setq doom-font (font-spec :family "Monospace" :size 12))
 
-(setq doom-theme 'doom-dark+)
+;;(setq doom-theme 'doom-dark+)
+(setq doom-theme 'doom-dracula)
+(setq display-line-numbers-type 'relative)
 
 (setq projectile-project-search-path '("~/Dropbox/gtbell/"))
 
@@ -14,6 +16,10 @@
 
   (setq org-agenda-files '("~/Dropbox/gtbell/"
                            "~/Dropbox/gtbell/Notes/"))
+  
+  (setq org-deadline-warning-days 0)
+  (setq org-agenda-skip-deadline-if-done t)
+  (setq org-agenda-skip-scheduled-if-done t)
 
   (setq org-protocol-default-template-key "l")
   (setq org-capture-templates
@@ -53,5 +59,6 @@
               :map org-mode-map
               (("C-c n i" . org-roam-insert))
               (("C-c n I" . org-roam-insert-immediate))))
+          
 
 (find-file "~/Dropbox/gtbell/main.org")
