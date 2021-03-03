@@ -15,7 +15,7 @@
   (setq org-directory "~/Dropbox/gtbell/")
 
   (setq org-agenda-files '("~/Dropbox/gtbell/"
-                           "~/Dropbox/gtbell/Notes/"))
+                           "~/Dropbox/gtbell/Workspaces/"))
   
   (setq org-deadline-warning-days 0)
   (setq org-agenda-skip-deadline-if-done t)
@@ -36,11 +36,14 @@
   (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
   (setq org-log-done 'time)
 
-  (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+  (setq org-todo-keywords '((sequence "TODO(t)" "TODAY(n)" "WAITING(w)" "DEFERRED(r)" "INPROGRESS(i)" "PROJECT(p)" "|" "DONE(d)" "CANCELLED(c)")))
 
   (setq org-todo-keyword-faces '(("TODO" :foreground "#0098dd" :weight normal :underline t)
-                                 ("NEXT" :foreground "#ff6480" :weight normal :underline t)
-                                 ("WAITING" :foreground "#9f7efe" :weight normal :underline t)
+                                 ("TODAY" :foreground "#0098dd" :weight normal :underline t)
+                                 ("WAITING" :foreground "#0098dd" :weight normal :underline t)
+                                 ("DEFFERED" :foreground "#0098dd" :weight normal :underline t)
+                                 ("INPROGRESS" :foreground "#ff6480" :weight normal :underline t)
+                                 ("PROJECT" :foreground "#9f7efe" :weight normal :underline t)
                                  ("DONE" :foreground "#50a14f" :weight normal :underline t)
                                  ("CANCELLED" :foreground "#7c7c75" :weight normal :underline t)))
 
@@ -51,7 +54,7 @@
       :hook
       (after-init . org-roam-mode)
       :custom
-      (org-roam-directory "~/Dropbox/gtbell/Notes/")
+      (org-roam-directory "~/Dropbox/gtbell/Research/")
       :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
                ("C-c n f" . org-roam-find-file)
@@ -61,4 +64,4 @@
               (("C-c n I" . org-roam-insert-immediate))))
           
 
-(find-file "~/Dropbox/gtbell/main.org")
+(find-file "~/Dropbox/gtbell/Workspaces/main.org")
