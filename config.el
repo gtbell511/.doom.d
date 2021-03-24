@@ -54,7 +54,7 @@
       :hook
       (after-init . org-roam-mode)
       :custom
-      (org-roam-directory "~/Dropbox/gtbell/Research/")
+      (org-roam-directory "~/Dropbox/gtbell/")
       :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
                ("C-c n f" . org-roam-find-file)
